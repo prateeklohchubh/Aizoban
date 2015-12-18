@@ -2,6 +2,7 @@ package com.jparkie.aizoban.controllers.factories;
 
 import com.jparkie.aizoban.controllers.sources.English_Batoto;
 import com.jparkie.aizoban.controllers.sources.English_MangaEden;
+import com.jparkie.aizoban.controllers.sources.English_MangaFox;
 import com.jparkie.aizoban.controllers.sources.English_MangaHere;
 import com.jparkie.aizoban.controllers.sources.English_MangaReader;
 import com.jparkie.aizoban.controllers.sources.Italian_MangaEden;
@@ -29,6 +30,8 @@ public class SourceFactory {
             currentSource = new Italian_MangaEden();
         } else if (sourceName.equalsIgnoreCase(Spanish_MangaHere.NAME)) {
             currentSource = new Spanish_MangaHere();
+        } else if (sourceName.equalsIgnoreCase(English_MangaFox.NAME)) {
+            currentSource = new English_MangaFox();
         } else {
             currentSource = new English_MangaEden();
         }
@@ -60,6 +63,8 @@ public class SourceFactory {
             currentSource = new Italian_MangaEden();
         } else if (url.contains(Spanish_MangaHere.BASE_URL)) {
             currentSource = new Spanish_MangaHere();
+        } else if (url.contains(English_MangaFox.BASE_URL)) {
+            currentSource = new English_MangaFox();
         } else {
             currentSource = new English_MangaEden();
         }

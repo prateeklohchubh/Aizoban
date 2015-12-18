@@ -1,6 +1,7 @@
 package com.jparkie.aizoban.controllers.sources;
 
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.jparkie.aizoban.controllers.caches.CacheProvider;
 import com.jparkie.aizoban.controllers.databases.ApplicationContract;
@@ -216,7 +217,7 @@ public class English_MangaEden implements Source {
 
     private String findNextUrlFromUpdatePageMarker(UpdatePageMarker newUpdate) {
         String requestUrl = newUpdate.getNextPageUrl();
-
+        Log.d(this.getClass().getName(),"Request URL is: "+requestUrl);
         if (!requestUrl.equals(DefaultFactory.UpdatePageMarker.DEFAULT_NEXT_PAGE_URL)) {
             String currentPageNumber = requestUrl.substring(0, requestUrl.lastIndexOf("/0")).replaceAll("[^\\d]", "");
 
